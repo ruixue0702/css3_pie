@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>css3_pie</title>
+	<link rel="stylesheet" href="reset.css">
+	<link rel="stylesheet" href="pie.css">
+	<style type="text/css">
+		body{
+			padding:20px;
+		}
+		dl{
+			clear:both;
+		}
+		dt{
+			font-size:30px;
+			line-height:1.5;
+		}
+		dd{
+			margin-bottom: 20px;
+			float:left;
+		}
+		.pie-wrap{
+			width: 140px;
+			height: 200px;
+			float:left;
+			margin:10px;
+			position:relative;
+		}
+		.pie-wrap p{
+			position: absolute;
+			top: 160px;
+			width:140px;
+			text-align: center;
+			font-size: 20px;
+		}
+	</style>
+</head>
+<body>
+
+		<dl>
+			<dt>CSS3饼图</dt>
+			<dd id="init-pie">
+				<div class="pie-wrap">
+					<div class="pie" id="base-pie" data-value="0.4"></div>
+					<p>Base</p>
+				</div>
+				<div class="pie-wrap">
+					<div class="pie" id="number-pie" data-value="0.85"></div>
+					<p>Number</p>
+				</div>
+				<div class="pie-wrap">
+					<div class="pie" id="animate-pie" data-value="0.2"></div>
+					<p>Animate</p>
+				</div>
+				<div class="pie-wrap">
+					<div class="pie" id="ring-pie" data-value="0.9"></div>
+					<p>Ring</p>
+				</div>
+				<div class="pie-wrap">
+					<div class="pie" id="colorful-pie" data-value="0.4"></div>
+					<p>ColorFul</p>
+				</div>
+				<div class="pie-wrap">
+					<div class="pie" id="rotate-pie" data-value="0.2"></div>
+					<p>Rotate</p>
+				</div>
+
+			</dd>
+		</dl>
+	
+	<script src="jquery-1.11.3.min.js"></script>
+	<script src="pie.js"></script>
+		
+	<!-- 初始化各种百分比的饼状图 -->
+	<script type="text/javascript">
+		var pie1 = new Pie({
+			el : '#base-pie',
+			number :false,
+			color : '#FF8C00'
+		});
+		pie1.init();
+
+		var pie2 = new Pie({
+			el : '#number-pie',
+			ring : 0.3,
+			color : '#FFFF00'
+		});
+		pie2.init();
+
+		var pie3 = new Pie({
+			el : '#animate-pie',
+			animite : true,
+			number :false,
+			ring : 0.4,
+			color : '#EE00EE'
+		});
+		pie3.init();
+
+		var pie4 = new Pie({
+			el : '#ring-pie',
+			animite : true,
+			ring : 0.5,
+			color : '#54FF9F'
+		});
+		pie4.init();
+
+		var pie5 = new Pie({
+			el : '#colorful-pie',
+			animite : true,
+			ring : 0.7,
+			color : '#FF0000'
+		});
+		pie5.init();
+
+		var pie6 = new Pie({
+			el : '#rotate-pie',
+			animite : true,
+			ring : 0.9,
+			color : '#ff7799',
+			rotate : -40
+		});
+		pie6.init();
+
+
+	</script>
+</body>
+</html>
